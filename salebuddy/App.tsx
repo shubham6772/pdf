@@ -18,11 +18,6 @@ const App = () => {
      await RNFetchBlob.fs.createFile(fPath, data, "base64");
  } else {
      await RNFetchBlob.fs.writeFile(fPath, data, "base64")
-     const pdfViewerPackageName = 'com.adobe.reader';
-     const url = `intent://${pdfViewerPackageName}/#Intent;scheme=file;action=android.intent.action.VIEW;type=application/pdf;S.encoded_data=${encodeURIComponent(`file://${fPath}`)};end`;
-     await Linking.openURL(url).catch((error)=> {
-      console.log(error);
-     })
  }
  }
 
